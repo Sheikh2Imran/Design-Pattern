@@ -15,7 +15,7 @@ class Concrete_Coffee(Abstract_Coffee):
     def get_ingredients(self):
         return "coffee"
 
-
+# decorator
 class Abstract_Decorator(Abstract_Coffee):
     def __init__(self, accepted_coffee):
         self.accepted_coffee = accepted_coffee
@@ -49,7 +49,7 @@ class Vanilla(Abstract_Decorator):
     def get_ingredients(self):
         return self.accepted_coffee.get_ingredients()+ " with vanilla"
 
-
+# driver method
 if __name__=="__main__":
     myCoffee = Concrete_Coffee()
     print("Coffee main price: ", myCoffee.get_price(), "Coffee main ingredients: ", myCoffee.get_ingredients())
