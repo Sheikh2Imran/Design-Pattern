@@ -30,6 +30,12 @@ class Duck:
     def __init__(self):
         self.fly_behavior = FlyBehavior()
         self.quack_behavior = QuackBehavior()
+        
+    def set_fly_behavior(self, fb):
+        self.fly_behavior = fb
+        
+    def set_quack_behavior(self, qb):
+        self.quack_behavior = qb
 
     def perform_fly(self):
         self.fly_behavior.fly()
@@ -44,8 +50,8 @@ class Duck:
 class MallardDuck(Duck):
     def __init__(self):
         super(MallardDuck, self).__init__()
-        self.fly_behavior = FlyWithWings()
-        self.quack_behavior = Quack()
+        self.set_fly_behavior(FlyWithWings())
+        self.set_quack_behavior(Quack())
 
     def perform_fly(self):
         self.fly_behavior.fly()
